@@ -37,13 +37,18 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use('/public', express.static('public'));
 app.use(methodOverride("_method"));
-mongoose.connect('mongodb://localhost/ina_camp_v11', 
+/* mongoose.connect('mongodb://localhost/ina_camp_v11', 
                  {  'useNewUrlParser': true, 
                     'useUnifiedTopology': true,
                      'useFindAndModify': false,
                      'useCreateIndex': true
+                 }); //connetion DB ke MongoDB dengan menggunakan layer Mongoose */
+mongoose.connect('mongodb+srv://egiit:Asd54321`@cluster0-p6gwj.mongodb.net/test?retryWrites=true&w=majority', 
+                 {  'useNewUrlParser': true, 
+                    'useUnifiedTopology': true,
+                    /*  'useFindAndModify': false,
+                     'useCreateIndex': true */
                  }); //connetion DB ke MongoDB dengan menggunakan layer Mongoose
-
 
 app.use(bodyParser.urlencoded({extended: true})); //Body Parser setting
 app.set("view engine", "ejs"); //setup ejs
