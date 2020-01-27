@@ -43,7 +43,7 @@ app.use(methodOverride("_method"));
                      'useFindAndModify': false,
                      'useCreateIndex': true
                  }); //connetion DB ke MongoDB dengan menggunakan layer Mongoose */
-mongoose.connect('mongodb+srv://giefilth:Asd54321`@cluster0-sqnyv.mongodb.net/test?retryWrites=true&w=majority', 
+mongoose.connect('mongodb+srv://egiit:Asd54321`@cluster0-p6gwj.mongodb.net/test?retryWrites=true&w=majority', 
                  {  'useNewUrlParser': true, 
                     'useUnifiedTopology': true,
                      'useFindAndModify': false,
