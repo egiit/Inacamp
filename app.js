@@ -66,10 +66,14 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use("/", indexRoutes);
+app.set('port', (process.env.PORT || 3000));
+
+app.use("/", indexRoutes).listen(app.get('port'), function() {
+    console.log('App is running, server is listening on port ', app.get('port'));
+});
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 
-app.listen(3000, console.log("YelpCamp Hurung Cuy.."));
+//app.listen(3000, console.log("YelpCamp Hurung Cuy.."));
