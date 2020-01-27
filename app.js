@@ -46,7 +46,7 @@ app.use(methodOverride("_method"));
 
 var URI =  'mongodb+srv://egiit:Asd54321`@cluster0-p6gwj.mongodb.net/test?retryWrites=true&w=majority';
 
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 mongoose.connect(URI, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true
     }).then(() => {
         console.log('DB Connected....');
