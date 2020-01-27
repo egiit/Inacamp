@@ -43,12 +43,18 @@ app.use(methodOverride("_method"));
  //                    'useFindAndModify': false,
 //                     'useCreateIndex': true
 //                 }); //connetion DB ke MongoDB dengan menggunakan layer Mongoose */
-mongoose.connect('mongodb+srv://egiit:Asd54321`@cluster0-p6gwj.mongodb.net/test?retryWrites=true&w=majority', 
-                 {  'useNewUrlParser': true, 
-                    'useUnifiedTopology': true,
-                     'useFindAndModify': false,
-                     //'useCreateIndex': true
-                 }); //connetion DB ke MongoDB dengan menggunakan layer Mongoose
+
+var URI =  'mongodb+srv://egiit:Asd54321`@cluster0-p6gwj.mongodb.net/test?retryWrites=true&w=majority';
+
+mongoose.Promise = global.Promise;
+mongoose.connect(URI, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true
+    }).then(() => {
+        console.log('DB Connected....');
+    }).catch(err => {
+        console.log(err.message);
+    });
+
+
 
 app.use(bodyParser.urlencoded({extended: true})); //Body Parser setting
 app.set("view engine", "ejs"); //setup ejs
