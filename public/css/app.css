@@ -1,0 +1,11 @@
+.img-fluid {/* ini image di tamplate shwo.ejs */
+    width: 100%;
+}
+
+#delete{
+    display: inline;
+}
+
+.delete{
+    display: inline;
+}
