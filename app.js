@@ -44,9 +44,8 @@ app.use(methodOverride("_method"));
 //                     'useCreateIndex': true
 //                 }); //connetion DB ke MongoDB dengan menggunakan layer Mongoose */
 
-var URI =  'mongodb+srv://egiit:Asd54321`@cluster0-p6gwj.mongodb.net/test?retryWrites=true&w=majority';
+var URI =  process.env.DATABASEURL //database env
 
-//mongoose.Promise = global.Promise;
 mongoose.connect(URI, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true
     }).then(() => {
         console.log('DB Connected....');
@@ -69,7 +68,7 @@ app.use(function (req, res, next) {
 app.set('port', (process.env.PORT || 3000));
 
 app.use("/", indexRoutes).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
+    console.log('Inacamp Hurung cuy Port na make Port ', app.get('port'));
 });
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
